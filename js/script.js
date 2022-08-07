@@ -10,13 +10,13 @@ function getComputerChoice() {
             computerTurn =  Math.round(computerTurn, 3);
 
             if (computerTurn == 1) {
-                computerTurn = "Rock";
+                computerTurn = 1; //Rock
                 break;
             } else if (computerTurn == 2) {
-                computerTurn = "Paper";
+                computerTurn = 2; //Paper
                 break;
             } else if (computerTurn == 3) {
-                computerTurn = "Scissors";
+                computerTurn = 3; //Scissors
                 break;
             }
         }
@@ -24,6 +24,13 @@ function getComputerChoice() {
     return computerTurn;
 }
 
-function playRound(playerSelection, computerSelection) {
-    
+let playerSelection = 1;
+
+function playRound() {
+    computerSeletion = getComputerChoice();
+    console.log(computerSeletion);
+    if (playerSelection == 1 && computerSeletion == 2 ) {
+        console.log("test");
+    }
 }
+playRound();
