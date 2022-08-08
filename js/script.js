@@ -9,28 +9,50 @@ function getComputerChoice() {
         if (computerTurn >= 1 && computerTurn<=3) {
             computerTurn =  Math.round(computerTurn, 3);
 
-            if (computerTurn == 1) {
-                computerTurn = 1; //Rock
+            switch (computerTurn) {
+                case 1:
+                    computerTurn = 1;//Rock
                 break;
-            } else if (computerTurn == 2) {
-                computerTurn = 2; //Paper
+                case 2:
+                    computerTurn = 2; //Paper
                 break;
-            } else if (computerTurn == 3) {
-                computerTurn = 3; //Scissors
+                case 3:
+                    computerTurn = 3; //Scissors
+                break;
+                default:
                 break;
             }
+            break;
         }
     }
     return computerTurn;
 }
 
-let playerSelection = 1;
+let playerSelection = 3;
 
 function playRound() {
     computerSeletion = getComputerChoice();
     console.log(computerSeletion);
-    if (playerSelection == 1 && computerSeletion == 2 ) {
-        console.log("test");
+    if (playerSelection == 1 && computerSeletion == 1 ) {
+        console.log("Draw! Nobody Wins...");
+    } else if (playerSelection == 1 && computerSeletion == 2) {
+        console.log("Lose! Paper beats Rock");
+    } else if (playerSelection == 1 && computerSeletion == 3) {
+        console.log("Win! Rock beats Scissor");
+
+    } else if (playerSelection == 2 && computerSeletion == 1 ) {
+        console.log("Win! Papers beats Rock");
+    } else if (playerSelection == 2 && computerSeletion == 2) {
+        console.log("Draw! Nobody Wins...");
+    } else if (playerSelection == 2 && computerSeletion == 3) {
+        console.log("Lose! Papers beats rock");
+
+    } else if (playerSelection == 3 && computerSeletion == 1 ) {
+        console.log("Lose! Rock beats Scissor");
+    } else if (playerSelection == 3 && computerSeletion == 2) {
+        console.log("Win! Rock beats Paper");
+    } else if (playerSelection == 3 && computerSeletion == 3) {
+        console.log("Draw! Nobody Wins...");
     }
 }
 playRound();
