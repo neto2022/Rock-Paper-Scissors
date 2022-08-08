@@ -2,37 +2,22 @@
 // the computer returns randomically rock, paper or scissors
 // and checks who won or ended up on a draw!
 
+let playerSelection;
+
 function getComputerChoice() {
     let computerTurn;
     while (1) {
         computerTurn = Math.random()*10;
         if (computerTurn >= 1 && computerTurn<=3) {
             computerTurn =  Math.round(computerTurn, 3);
-
-            switch (computerTurn) {
-                case 1:
-                    computerTurn = 1;//Rock
-                break;
-                case 2:
-                    computerTurn = 2; //Paper
-                break;
-                case 3:
-                    computerTurn = 3; //Scissors
-                break;
-                default:
-                break;
-            }
             break;
         }
     }
     return computerTurn;
 }
 
-let playerSelection = 3;
-
 function playRound() {
     computerSeletion = getComputerChoice();
-    console.log(computerSeletion);
     if (playerSelection == 1 && computerSeletion == 1 ) {
         console.log("Draw! Nobody Wins...");
     } else if (playerSelection == 1 && computerSeletion == 2) {
@@ -55,4 +40,25 @@ function playRound() {
         console.log("Draw! Nobody Wins...");
     }
 }
-playRound();
+
+function game() {
+    for (let i = 0; i < 5; i++) {
+    playerSelection = prompt("Choose between Rock, Paper or Scissors");
+    if (playerSelection >= -10000 && playerSelection <= 10000) {
+        //checks if some number was typed
+        alert("Only type Rock, Paper or Scissors!!!");
+        break;
+    } else if (playerSelection == "Rock" || playerSelection == "rock") {
+        playerSelection = 1;
+    } else if (playerSelection == "Paper" || playerSelection == "paper" ) {
+        playerSelection = 2;
+    } else if (playerSelection == "Scissors" || playerSelection == "scissors") {
+        playerSelection = 3;
+    } else {
+        alert("Only type Rock, Paper or Scissors!!!");
+    }
+    getComputerChoice();
+    playRound();
+    }
+}
+game();
