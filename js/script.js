@@ -19,44 +19,51 @@ function getComputerChoice() {
 function playRound() {
     computerSeletion = getComputerChoice();
     if (playerSelection == 1 && computerSeletion == 1 ) {
-        alert("Draw! Nobody Wins...");
+        return result = "Draw! Nobody Wins...";
     } else if (playerSelection == 1 && computerSeletion == 2) {
-        alert("Lose! Paper beats Rock");
+        return result = "Lose! Paper beats Rock";
     } else if (playerSelection == 1 && computerSeletion == 3) {
-        alert("Win! Rock beats Scissor");
+        return result = "Win! Rock beats Scissor";
 
     } else if (playerSelection == 2 && computerSeletion == 1 ) {
-        alert("Win! Papers beats Rock");
+        return result = "Win! Papers beats Rock";
     } else if (playerSelection == 2 && computerSeletion == 2) {
-        alert("Draw! Nobody Wins...");
+        return result = "Draw! Nobody Wins...";
     } else if (playerSelection == 2 && computerSeletion == 3) {
-        alert("Lose! Papers beats rock");
+        return result = "Lose! Paper beats Rock";
 
     } else if (playerSelection == 3 && computerSeletion == 1 ) {
-        alert("Lose! Rock beats Scissor");
+        return result = "Lose! Rock beats Scissor";
     } else if (playerSelection == 3 && computerSeletion == 2) {
-        alert("Win! Rock beats Paper");
+        return result = "Win! Rock beats Paper";
     } else if (playerSelection == 3 && computerSeletion == 3) {
-        alert("Draw! Nobody Wins...");
+        return result = "Draw! Nobody Wins...";
     }
 }
+var result;
 
-function game() {
-    for (let i = 0; i < 5; i++) {
-    playerSelection = prompt("Choose between Rock, Paper or Scissors");
-    if (playerSelection == "number") {
-        //checks if some number was typed
-        alert("Only type Rock, Paper or Scissors!!!");
-        break;
-    } else if (playerSelection == "Rock" || playerSelection == "rock") {
+let logsOnDiv = document.getElementById("logs");
+const p1 = document.createElement('p');
+
+
+function game(arg) {
+    console.log(arg)
+    if (arg == 'Rock' ) {
         playerSelection = 1;
-    } else if (playerSelection == "Paper" || playerSelection == "paper" ) {
+    } else if (arg == "Paper") {
         playerSelection = 2;
-    } else if (playerSelection == "Scissors" || playerSelection == "scissors") {
+    } else if (arg == "Scissors") {
         playerSelection = 3;
     }
-    getComputerChoice();
-    playRound();
-    }
+    playRound(playerSelection);
+    console.log(result,'1')
+    var contentp1 = document.createTextNode(result);
+    p1.appendChild(contentp1);
+    p1.setAttribute('id', 'score');
+    logsOnDiv.appendChild(p1);
+    document.body.insertBefore(p1, logsOnDiv);
 }
 game();
+
+
+
