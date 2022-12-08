@@ -1,7 +1,7 @@
 // A program thats get rock, paper or scissors from the user and 
 // the computer returns randomically rock, paper or scissors
 // and checks who won or ended up on a draw!
-
+//Display the running score, and announce a winner of the game once one player reaches 5 points.
 let playerSelection;
 
 function getComputerChoice() {
