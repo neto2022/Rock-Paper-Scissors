@@ -19,32 +19,32 @@ function getComputerChoice() {
 function playRound() {
     computerSeletion = getComputerChoice();
     if (playerSelection == 1 && computerSeletion == 1 ) {
-        console.log("Draw! Nobody Wins...");
+        alert("Draw! Nobody Wins...");
     } else if (playerSelection == 1 && computerSeletion == 2) {
-        console.log("Lose! Paper beats Rock");
+        alert("Lose! Paper beats Rock");
     } else if (playerSelection == 1 && computerSeletion == 3) {
-        console.log("Win! Rock beats Scissor");
+        alert("Win! Rock beats Scissor");
 
     } else if (playerSelection == 2 && computerSeletion == 1 ) {
-        console.log("Win! Papers beats Rock");
+        alert("Win! Papers beats Rock");
     } else if (playerSelection == 2 && computerSeletion == 2) {
-        console.log("Draw! Nobody Wins...");
+        alert("Draw! Nobody Wins...");
     } else if (playerSelection == 2 && computerSeletion == 3) {
-        console.log("Lose! Papers beats rock");
+        alert("Lose! Papers beats rock");
 
     } else if (playerSelection == 3 && computerSeletion == 1 ) {
-        console.log("Lose! Rock beats Scissor");
+        alert("Lose! Rock beats Scissor");
     } else if (playerSelection == 3 && computerSeletion == 2) {
-        console.log("Win! Rock beats Paper");
+        alert("Win! Rock beats Paper");
     } else if (playerSelection == 3 && computerSeletion == 3) {
-        console.log("Draw! Nobody Wins...");
+        alert("Draw! Nobody Wins...");
     }
 }
 
 function game() {
     for (let i = 0; i < 5; i++) {
     playerSelection = prompt("Choose between Rock, Paper or Scissors");
-    if (playerSelection >= -10000 && playerSelection <= 10000) {
+    if (playerSelection == "number") {
         //checks if some number was typed
         alert("Only type Rock, Paper or Scissors!!!");
         break;
@@ -54,8 +54,6 @@ function game() {
         playerSelection = 2;
     } else if (playerSelection == "Scissors" || playerSelection == "scissors") {
         playerSelection = 3;
-    } else {
-        alert("Only type Rock, Paper or Scissors!!!");
     }
     getComputerChoice();
     playRound();
